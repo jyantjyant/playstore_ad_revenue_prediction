@@ -3,7 +3,7 @@ from huggingface_hub import HfApi, create_repo
 import os
 
 
-repo_id = "jyantjyant/play-store-revenue-analysis"
+repo_id = "Jyant/play-store-revenue-analysis"
 repo_type = "dataset"
 
 # Initialize API client
