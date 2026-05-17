@@ -17,9 +17,15 @@ from huggingface_hub import login, HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 import mlflow
 
+
 # mlflow.set_tracking_uri("http://localhost:5000")
 # To your active public Ngrok endpoint:
-mlflow.set_tracking_uri("https://nontumultuous-unbeholdable-yoko.ngrok-free.dev")
+# mlflow.set_tracking_uri("https://nontumultuous-unbeholdable-yoko.ngrok-free.dev")
+# mlflow.set_experiment("mlops-training-experiment")
+
+MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://localhost:5000")
+
+mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 mlflow.set_experiment("mlops-training-experiment")
 
 api = HfApi()
